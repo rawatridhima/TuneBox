@@ -1,0 +1,26 @@
+.loader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 20;
+    /* flex: 1; */
+    backdrop-filter: blur(10px);
+    .box{
+        border-radius: 50%;
+        background-color: transparent;
+        border: 5px solid var(--bgColor-1);
+        border-bottom: 5px solid var(--textColor-2);
+        animation:loadSpinner 1s linear infinite;
+    }
+}
+
+@keyframes loadSpinner {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
