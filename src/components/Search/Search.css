@@ -102,39 +102,48 @@
         }
     }
 }
+
 /* respomsiveness */
 /*mobile */
 @media screen and (max-width:599px) {
-    .body{
-        .screen{
+    .body {
+        .screen {
             padding: .5rem;
-            .search-top{
+
+            .search-top {
                 padding: 5px;
-                .icon{
+
+                .icon {
                     font-size: .8rem;
                 }
             }
-            .search-bottom{
-                .content{
+
+            .search-bottom {
+                .content {
                     padding: 5px;
-                    .same{
-                       gap: 1rem;
-                       img{
-                        width: 30px;
-                        height: 30px;
-                       }
-                       .names{
-                        gap: 2px;
-                        h4 {
-                            font-size: .6rem;
+
+                    .same {
+                        gap: 1rem;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
                         }
 
-                        >h5 {
-                            font-size: .4rem;
+                        .names {
+                            gap: 2px;
+
+                            h4 {
+                                font-size: .6rem;
+                            }
+
+                            >h5 {
+                                font-size: .4rem;
+                            }
                         }
-                       }
 
                     }
+
                     >h5 {
                         font-size: .5rem;
                     }

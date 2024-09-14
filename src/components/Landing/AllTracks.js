@@ -3,13 +3,11 @@ import Player from "../../Player/Player";
 const AllTracks = ({ data }) => {
   // states
   const [detail, setDetail] = useState();
- 
- 
 
   return (
     <>
       {detail ? (
-        <Player detail={detail} isAlbum={false} isTrack={true}/>
+        <Player detail={detail} isAlbum={false} isTrack={true} />
       ) : (
         <div className="members">
           {data

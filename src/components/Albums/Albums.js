@@ -104,10 +104,14 @@ const Albums = () => {
             <div className="outer">
               {data
                 ? data.slice(10, 20).map((x, i) => (
-                    <div className="block" key={i} onClick={() => {
+                    <div
+                      className="block"
+                      key={i}
+                      onClick={() => {
                         setDetail(x);
                         setComp(2);
-                      }}>
+                      }}
+                    >
                       <img src={x.images[0].url} />
                       <h5 className="name">{x.name}</h5>
                       <h5 className="artist">{x.artists[0].name} </h5>
@@ -118,13 +122,17 @@ const Albums = () => {
           </div>
           <div className="second">
             <h4>Top 15 Albums</h4>
-            <div className="container" >
+            <div className="container">
               {data
                 ? data.slice(20, 35).map((a, b) => (
-                    <div className="contain" key={b}  onClick={() => {
+                    <div
+                      className="contain"
+                      key={b}
+                      onClick={() => {
                         setDetail(a);
                         setComp(2);
-                      }}>
+                      }}
+                    >
                       <h1>{convertNum(b + 1)}</h1>
                       <img src={a.images[0].url} />
                       <div className="names">

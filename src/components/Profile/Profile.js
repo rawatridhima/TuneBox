@@ -32,14 +32,12 @@ const Profile = () => {
         compareEncryptedData(info.cpass, info.pass) ||
         info.cpass == info.pass
       ) {
-      
         const res = await UserService.update(auth.user.id, {
           ...info,
           cpass: null,
         });
         toast.success("Profile Updated Successfully!");
         setInfo();
-       
       } else {
         toast.error("Password and Confirm Password does'nt match!");
       }
@@ -50,7 +48,7 @@ const Profile = () => {
   };
 
   // rendering
-  
+
   useEffect(() => {
     if (auth.isAuth) {
       getUser();
@@ -101,7 +99,6 @@ const Profile = () => {
                     <label htmlFor="">Your Password *</label>
                     <input
                       type="password"
-                      
                       onChange={(e) => {
                         setInfo({
                           ...info,

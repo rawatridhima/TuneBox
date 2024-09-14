@@ -289,7 +289,7 @@
 
                 thead {
                     border-bottom: 1px solid var(--hoverColor);
-                
+
                     tr {
                         td {
                             color: var(--hoverColor);
@@ -318,13 +318,13 @@
                         }
                     }
 
-                    tr:hover{
-                        td{
-                            h4{
+                    tr:hover {
+                        td {
+                            h4 {
                                 color: var(--hoverColor);
                             }
                         }
-             
+
                     }
                 }
             }
@@ -374,6 +374,7 @@
                 }
             }
         }
+
         & .song {
             & .up {
                 & .lft {
@@ -492,34 +493,43 @@
                 }
             }
         }
+
         & .song {
             padding: .5rem;
+
             & .up {
                 gap: 1.5rem;
+
                 & .lft {
                     img {
                         height: 100px;
                         width: 100px;
                     }
                 }
+
                 & .rit {
                     gap: 4px;
+
                     >h4 {
                         font-size: .7rem;
                     }
-                    h5{
+
+                    h5 {
                         font-size: .5rem;
                     }
-                    button{
+
+                    button {
                         font-size: 9px;
                         padding: 3px 10px;
                     }
                 }
             }
+
             & .down {
                 & table {
                     & thead {
                         text-align: center;
+
                         & tr {
                             td {
                                 color: var(--hoverColor);
@@ -530,6 +540,7 @@
                             }
                         }
                     }
+
                     & tbody {
                         & tr {
                             & td {
@@ -542,6 +553,6 @@
                 }
             }
         }
-    
+
     }
 }

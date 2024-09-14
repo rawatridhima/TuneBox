@@ -54,7 +54,7 @@ const Landing = () => {
         }
       )
       .then(function (res) {
-        console.log(res.data)
+        console.log(res.data);
         setTrack(res.data.tracks);
       })
       .catch(function (res) {
@@ -77,8 +77,8 @@ const Landing = () => {
       })
       .then(function (res) {
         setData(res.data.albums.items);
-        console.log(res.data)
-        setLoader(false)
+        console.log(res.data);
+        setLoader(false);
       })
       .catch(function (res) {
         if (res instanceof Error) {
@@ -95,9 +95,9 @@ const Landing = () => {
     getTracks();
     getAlbumnsData();
   }, []);
-  useEffect(()=>{
-console.log(data)
-  },[data])
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
 
   return (
     <>
@@ -128,7 +128,7 @@ console.log(data)
                       key={b}
                       onClick={() => {
                         setDetailTrack(a);
-                        setIsTrack(true)
+                        setIsTrack(true);
                         setComp(3);
                       }}
                     >

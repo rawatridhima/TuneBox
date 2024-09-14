@@ -13,10 +13,15 @@ const DetailedAlbum = ({ detail }) => {
 
   const viewArray = [
     {
-      component: <Player data={{...data,images:detail.images}} isAlbum={true} isTrack={false} />,
+      component: (
+        <Player
+          data={{ ...data, images: detail.images }}
+          isAlbum={true}
+          isTrack={false}
+        />
+      ),
     },
   ];
-  
 
   // rendering
   useEffect(() => {
@@ -41,9 +46,8 @@ const DetailedAlbum = ({ detail }) => {
         }
       });
   }, []);
- 
-  return (
 
+  return (
     <>
       {comp === 0 ? (
         <div className="song">
@@ -77,7 +81,6 @@ const DetailedAlbum = ({ detail }) => {
               <tbody>
                 {source
                   ? source.items.map((a, b) => (
-                 
                       <tr
                         key={b}
                         onClick={() => {
@@ -85,7 +88,6 @@ const DetailedAlbum = ({ detail }) => {
                           setComp(1);
                         }}
                       >
-                    
                         <td>
                           <h4>{b + 1}</h4>
                         </td>

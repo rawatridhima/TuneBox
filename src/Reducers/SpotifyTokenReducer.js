@@ -10,7 +10,7 @@ const SpotifyToken = createSlice({
     setToken: (state, action) => {
       const currTime = new Date(Date.now());
       state.token = action.payload;
-      state.expires = (new Date(currTime.getTime() + 60*60 * 1000)).getTime();
+      state.expires = new Date(currTime.getTime() + 60 * 60 * 1000).getTime();
     },
     resetToken: (state) => {
       state.token = null;
@@ -18,5 +18,5 @@ const SpotifyToken = createSlice({
     },
   },
 });
-export const {setToken,resetToken} = SpotifyToken.actions;
+export const { setToken, resetToken } = SpotifyToken.actions;
 export const SpotifyTokenReducer = SpotifyToken.reducer;

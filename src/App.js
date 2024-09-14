@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Hero from "./components/Hero/Hero";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +12,7 @@ const App = () => {
   const spotifyToken = useSelector((x) => x.spotifyToken);
   const dispatch = useDispatch();
   const location = useLocation();
-  const [hasTriggered,setHasTriggred]=useState(false);
+  const [hasTriggered, setHasTriggred] = useState(false);
 
   // methods
   const handleToken = () => {
@@ -24,12 +23,12 @@ const App = () => {
       "%20"
     )}&response_type=token&show_dialog=true`;
   };
-  const checkTime=()=>{
-const currTime=(new Date(Date.now())).getTime();
-if(spotifyToken.expires < currTime && !hasTriggered){
-setHasTriggred(true);
-}
-  }
+  const checkTime = () => {
+    const currTime = new Date(Date.now()).getTime();
+    if (spotifyToken.expires < currTime && !hasTriggered) {
+      setHasTriggred(true);
+    }
+  };
 
   // rendering
 
@@ -45,28 +44,26 @@ setHasTriggred(true);
         .split("&")
         .find((elem) => elem.startsWith("access_token"))
         .split("=")[1];
-      dispatch(setToken(token))
-      window.location.hash=""
-    }
-    else{
-      if(spotifyToken.token){
-        const currTime=new Date(Date.now())
-        if(spotifyToken.expires < currTime.getTime()){
-          dispatch(resetToken())
-          handleToken()
+      dispatch(setToken(token));
+      window.location.hash = "";
+    } else {
+      if (spotifyToken.token) {
+        const currTime = new Date(Date.now());
+        if (spotifyToken.expires < currTime.getTime()) {
+          dispatch(resetToken());
+          handleToken();
         }
-      }
-      else{
-        handleToken()
+      } else {
+        handleToken();
       }
     }
-console.log(spotifyToken)
+    console.log(spotifyToken);
   }, [hasTriggered]);
 
-  useEffect(()=>{
-const timeInterval=setInterval(checkTime,1000)
-return ()=>clearInterval(timeInterval)
-  },[])
+  useEffect(() => {
+    const timeInterval = setInterval(checkTime, 1000);
+    return () => clearInterval(timeInterval);
+  }, []);
 
   return (
     <div className="App">

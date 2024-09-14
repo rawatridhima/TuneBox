@@ -81,25 +81,27 @@
                 font-weight: 400;
                 justify-self: flex-end;
             }
-.cover{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--textColor-2);
-    height: 6px;
-    border-radius: 2px;
-    position: relative;
-    width: 100%;
-    cursor: pointer;
-    .line {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        background-color: var(--textColor-1);
-        border-radius: 2px;
-    }
-}
+
+            .cover {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--textColor-2);
+                height: 6px;
+                border-radius: 2px;
+                position: relative;
+                width: 100%;
+                cursor: pointer;
+
+                .line {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                    background-color: var(--textColor-1);
+                    border-radius: 2px;
+                }
+            }
         }
 
 

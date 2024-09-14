@@ -34,27 +34,26 @@ export default class UserService {
       };
     }
   }
-    //update only one record.
-    static async update(id, entity) {
-      try {
-        const data = await update(ref(database, `users /${id}`), entity);
-        return data;
-      } catch (error) {
-        return {
-          success: false,
-          error,
-        };
-      }
+  //update only one record.
+  static async update(id, entity) {
+    try {
+      const data = await update(ref(database, `users /${id}`), entity);
+      return data;
+    } catch (error) {
+      return {
+        success: false,
+        error,
+      };
     }
+  }
   // extra methods
   static async getUserByEmail(email) {
-    
     const res = Object.values((await this.read()) || []);
-    const arr=[]
+    const arr = [];
     res.forEach((x, i) => {
       if (x.email == email) {
-       arr.push(x);
-      } 
+        arr.push(x);
+      }
     });
     return arr;
   }

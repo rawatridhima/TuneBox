@@ -270,9 +270,6 @@ const Dashboard = () => {
       {reg ? (
         <>
           <div className="modal">
-            {loader ? (
-              <Loader fullHeight={true} fullWidth={true} size={50} />
-            ) : null}
             <div className="box">
               <h3>Register / Sign Up</h3>
               <div className="mid">
@@ -362,9 +359,6 @@ const Dashboard = () => {
                 </h5>
               </div>
             </div>
-            {loader ? (
-              <Loader fullHeight={true} fullWidth={true} size={50} />
-            ) : null}
           </div>
         </>
       ) : null}
@@ -450,9 +444,6 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          {loader ? (
-            <Loader fullHeight={true} fullWidth={true} size={50} />
-          ) : null}
         </>
       ) : null}
       {sideModal ? (

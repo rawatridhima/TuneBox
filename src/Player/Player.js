@@ -36,23 +36,23 @@ const Player = ({ detail, isAlbum, isTrack, data }) => {
     setCurrentTime(newTime);
   };
   const handleNext = () => {
-    setCurrent(prev=>{
+    setCurrent((prev) => {
       setTrackStatus(true);
       setAlbumStatus(false);
       const val = track[pointer];
-      setPointer(prev=>prev+1);
+      setPointer((prev) => prev + 1);
       return val;
-    })
+    });
   };
   const handlePrevious = () => {
-    setCurrent(prev=>{
+    setCurrent((prev) => {
       setTrackStatus(true);
       setAlbumStatus(false);
-      setPointer(prev=>prev-1);
-      const val = track[pointer-2];
-      console.log(val)
+      setPointer((prev) => prev - 1);
+      const val = track[pointer - 2];
+      console.log(val);
       return val;
-    })
+    });
   };
   const getTracks = async () => {
     axios
@@ -88,7 +88,7 @@ const Player = ({ detail, isAlbum, isTrack, data }) => {
   }, [isPlay]);
 
   useEffect(() => {
-    if (currentTime >= duration ) {
+    if (currentTime >= duration) {
       handleNext();
     }
   }, [currentTime]);
@@ -97,7 +97,7 @@ const Player = ({ detail, isAlbum, isTrack, data }) => {
       audioRef.current.currentTime = 0;
       audioRef.current.play();
     }
-    console.log(pointer)
+    console.log(pointer);
   }, [pointer]);
   useEffect(() => {
     setCurrent((prev) => {
@@ -106,9 +106,9 @@ const Player = ({ detail, isAlbum, isTrack, data }) => {
     });
     getTracks();
   }, []);
-  useEffect(()=>{
+  useEffect(() => {
     console.log(current);
-  },[current])
+  }, [current]);
 
   if (!current) return <Loader size={50} fullHeight={true} fullWidth={true} />;
   else
@@ -151,10 +151,10 @@ const Player = ({ detail, isAlbum, isTrack, data }) => {
                 <h3>{formatTime(duration)}</h3>
               </div>
               <div className="low">
-              {
-                pointer==1?null:(<FaStepBackward className="icon" onClick={handlePrevious} />)
-              }
-                
+                {pointer == 1 ? null : (
+                  <FaStepBackward className="icon" onClick={handlePrevious} />
+                )}
+
                 {isPlay ? (
                   <MdOutlinePauseCircleFilled
                     className="icon"
@@ -177,8 +177,7 @@ const Player = ({ detail, isAlbum, isTrack, data }) => {
             </div>
             <div className="lower">
               <div className="image">
-              <img src={current.images[0].url}  />
-               
+                <img src={current.images[0].url} />
               </div>
               <div className="mid">
                 <h2>{current.name}</h2>
@@ -199,10 +198,9 @@ const Player = ({ detail, isAlbum, isTrack, data }) => {
                 <h3>{formatTime(duration)}</h3>
               </div>
               <div className="low">
-             
-              {
-                pointer==1?null:(<FaStepBackward className="icon" onClick={handlePrevious} />)
-              }
+                {pointer == 1 ? null : (
+                  <FaStepBackward className="icon" onClick={handlePrevious} />
+                )}
                 {isPlay ? (
                   <MdOutlinePauseCircleFilled
                     className="icon"
